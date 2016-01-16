@@ -1,0 +1,25 @@
+version: '1.0.0.{build}'
+
+pull_requests:
+  do_not_increment_build_number: true
+
+configuration: Release
+
+skip_tags: true
+
+assembly_info:
+  patch: true
+  file: '**\AssemblyInfo.*'
+  assembly_version: '1.0.0'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '1.0.0'
+
+before_build:
+- cmd: nuget restore
+
+build:
+  verbosity: minimal
+
+artifacts:
+- path: Pretzel.Categories\bin\$(configuration)\Pretzel.Categories.dll
+  name: Pretzel.Categories.dll
