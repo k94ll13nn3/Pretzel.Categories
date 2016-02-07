@@ -13,11 +13,11 @@ Not implemented in the current version.
 
 ### Tag Pages
 
-This plugin will automatically generate tag pages during build. Each tag page is saved as`_site/tag/<slugify-tag-name>/index.html`.
+This plugin will automatically generate tag pages during build. Each tag page is saved as`_site/tag/<slugified-tag-name>/index.html`.
 
 This can be disabled by using the `-ntag` option with the `taste` or `bake` command.
 
-You can specify a layout by setting the `tag_pages_layout` configuration key (it uses `layout` by default).
+You can specify a layout by setting the `tag_pages_layout` configuration key in the config.yml (it uses `layout` by default).
 
 ### Installation
 

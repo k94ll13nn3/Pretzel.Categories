@@ -27,7 +27,7 @@ namespace Pretzel.Categories.Tests
             var context = CreateContext(new[] { "C#" });
             context.Config = mock.Object;
 
-            new TagFolderGenerator().Transform(context);
+            new TagsFolderGenerator().Transform(context);
 
             Assert.That(context.Pages[0].Content, Is.EqualTo($"---\r\n layout: some_layout \r\n tag: C# \r\n---\r\n"));
             Assert.That(context.Pages[0].Bag, Is.EqualTo($"---\r\n layout: some_layout \r\n tag: C# \r\n---\r\n".YamlHeader()));
@@ -38,7 +38,7 @@ namespace Pretzel.Categories.Tests
         {
             var context = CreateContext(new[] { "C#" });
 
-            new TagFolderGenerator().Transform(context);
+            new TagsFolderGenerator().Transform(context);
 
             Assert.That(context.Pages[0].Content, Is.EqualTo($"---\r\n layout: layout \r\n tag: C# \r\n---\r\n"));
             Assert.That(context.Pages[0].Bag, Is.EqualTo($"---\r\n layout: layout \r\n tag: C# \r\n---\r\n".YamlHeader()));
@@ -60,7 +60,7 @@ namespace Pretzel.Categories.Tests
         {
             var context = CreateContext(new[] { "C#" });
 
-            var tagFolderGenerator = new TagFolderGenerator();
+            var tagFolderGenerator = new TagsFolderGenerator();
 
             var options = new OptionSet();
             tagFolderGenerator.UpdateOptions(options);
@@ -76,7 +76,7 @@ namespace Pretzel.Categories.Tests
         {
             var context = CreateContext(new[] { "C#" });
 
-            new TagFolderGenerator().Transform(context);
+            new TagsFolderGenerator().Transform(context);
 
             Assert.That(context.Pages[0].File, Is.EqualTo(Path.Combine(context.SourceFolder, "tag", SlugifyFilter.Slugify("C#"), "index.html")));
             Assert.That(context.Pages[0].Filepath, Is.EqualTo(Path.Combine(context.OutputFolder, "tag", SlugifyFilter.Slugify("C#"), "index.html")));
@@ -89,7 +89,7 @@ namespace Pretzel.Categories.Tests
         {
             var context = CreateContext(new[] { "C#", "tag" });
 
-            new TagFolderGenerator().Transform(context);
+            new TagsFolderGenerator().Transform(context);
 
             Assert.That(context.Pages[0].File, Is.EqualTo(Path.Combine(context.SourceFolder, "tag", SlugifyFilter.Slugify("C#"), "index.html")));
             Assert.That(context.Pages[1].File, Is.EqualTo(Path.Combine(context.SourceFolder, "tag", SlugifyFilter.Slugify("tag"), "index.html")));
