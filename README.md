@@ -9,7 +9,11 @@ This is a plugin for the static site generation tool [Pretzel](https://github.co
 
 ### Category Pages
 
-Not implemented in the current version.
+This plugin will automatically generate category pages during build. Each category page is saved as`_site/category/<slugified-category-name>/index.html`.
+
+This can be disabled by using the `-ncategory` option with the `taste` or `bake` command.
+
+You can specify a layout by setting the `category_pages_layout` configuration key in the config.yml (it uses `layout` by default).
 
 ### Tag Pages
 
