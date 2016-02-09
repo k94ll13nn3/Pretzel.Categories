@@ -1,11 +1,11 @@
 ﻿// Pretzel.Categories plugin
+using System.Collections.Generic;
 using System.IO;
 using NDesk.Options;
 using Pretzel.Logic.Extensibility;
 using Pretzel.Logic.Extensibility.Extensions;
 using Pretzel.Logic.Extensions;
 using Pretzel.Logic.Templating.Context;
-using System.Collections.Generic;
 
 namespace Pretzel.Categories
 {

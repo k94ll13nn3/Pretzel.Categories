@@ -1,7 +1,7 @@
 ﻿// Pretzel.Categories plugin
 using System.Collections.Generic;
-using Pretzel.Logic.Templating.Context;
 using System.Linq;
+using Pretzel.Logic.Templating.Context;
 
 namespace Pretzel.Categories
 {
