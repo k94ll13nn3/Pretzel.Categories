@@ -19,10 +19,7 @@ namespace Pretzel.Categories
             this.folderName = folderToGenerate;
         }
 
-        public string[] GetArguments(string command)
-        {
-            return command == "taste" || command == "bake" ? new[] { $"n{this.folderName}" } : new string[0];
-        }
+        public string[] GetArguments(string command) => command == "taste" || command == "bake" ? new[] { $"n{this.folderName}" } : new string[0];
 
         public void Transform(SiteContext siteContext)
         {
